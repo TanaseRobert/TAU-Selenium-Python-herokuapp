@@ -20,13 +20,13 @@ def test_title(browser):
     add_remove_page = AddRemoveElementsPage(browser)
     # deschidem o pagina
     add_remove_page.load_page()
-    assert add_remove_page.isTitleCorrect(), "Incorrect title"
+    assert "Add/Remove Elements" == add_remove_page.getTitlePage(), "Incorrect title page"
 
 def test_link(browser):
     add_remove_page = AddRemoveElementsPage(browser)
     # deschidem o pagina
     add_remove_page.load_page()
-    add_remove_page.TheRightLink()
+    add_remove_page.isTheRightLink()
 
 def test_add_and_delete_functionality(browser):
     add_remove_page = AddRemoveElementsPage(browser)
@@ -36,7 +36,7 @@ def test_add_and_delete_functionality(browser):
     for i in range(10):
         add_remove_page.clickAddButton()
     add_remove_page.clickDeleteButton()
-    assert add_remove_page.getNumberOfDeleteButton(), "Not all delete button is displayed "
+    assert add_remove_page.getNumberOfDeleteButton(), "Not all delete button is displayed"
     for i in range(10):
         add_remove_page.clickFirstDeleteButton()
         delete_button_list = browser.find_elements(By.CLASS_NAME, "added-manually")

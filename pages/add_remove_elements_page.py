@@ -4,7 +4,7 @@ class AddRemoveElementsPage:
     #locators
     ADD_ELEMENT_BUTTON = (By.CSS_SELECTOR, '[onclick="addElement()"]')
     DELETE_BUTTON = (By.CLASS_NAME, "added-manually")
-    TITLE = (By.CSS_SELECTOR, "#content > h3")
+    TITLE_PAGE = (By.CSS_SELECTOR, "h3")
 
     # URL
     URL = "https://the-internet.herokuapp.com/add_remove_elements/"
@@ -30,10 +30,10 @@ class AddRemoveElementsPage:
     def isAddButtonDisplayed(self):
         return self.browser.find_element(*self.ADD_ELEMENT_BUTTON).is_displayed()
 
-    def isTitleCorrect(self):
-        return self.browser.find_element(*self.TITLE).is_displayed()
+    def getTitlePage(self):
+        return self.browser.find_element(*self.TITLE_PAGE).text
 
-    def TheRightLink(self):
+    def isTheRightLink(self):
         LINK = "https://the-internet.herokuapp.com/add_remove_elements/"
         if LINK == self.URL:
             self.browser.get(self.URL)
