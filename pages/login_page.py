@@ -2,11 +2,11 @@ from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
 class LoginPage:
-    # locators
+
     USERNAME_INPUT = (By.ID, "username")
     PASSWORD_INPUT = (By.ID, "password")
+    FAIL_TEXT = (By.CSS_SELECTOR, '[class="flash error"]')
 
-    # URL
     URL = "https://the-internet.herokuapp.com/login"
 
     def __init__(self, browser):
@@ -28,3 +28,6 @@ class LoginPage:
         self.insert_username(username)
         self.insert_password(password)
         self.click_login()
+
+    def getFailMessage(self):
+        return self.browser.find_element(*self.FAIL_TEXT).text
