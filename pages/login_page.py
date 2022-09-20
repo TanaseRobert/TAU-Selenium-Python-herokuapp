@@ -6,6 +6,7 @@ class LoginPage:
     USERNAME_INPUT = (By.ID, "username")
     PASSWORD_INPUT = (By.ID, "password")
     FAIL_TEXT = (By.CSS_SELECTOR, '[class="flash error"]')
+    LOGIN_BUTTON = (By.CSS_SELECTOR, '[class^="radius"]')
 
     URL = "https://the-internet.herokuapp.com/login"
 
@@ -31,3 +32,9 @@ class LoginPage:
 
     def getFailMessage(self):
         return self.browser.find_element(*self.FAIL_TEXT).text
+
+    def isLoginDisplayed(self):
+        return self.browser.find_element(*self.LOGIN_BUTTON).is_displayed()
+
+    def getButton(self):
+        return self.browser.find_element(*self.LOGIN_BUTTON).text
