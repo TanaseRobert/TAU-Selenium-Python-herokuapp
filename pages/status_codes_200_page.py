@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 class StatusCodes200Page:
 
-    WELCOME_MESSAGE = (By.CSS_SELECTOR, 'div[class = "example"]>p')
+    WELCOME_MESSAGE = (By.CSS_SELECTOR, 'div[class="example"]>p')
 
     URL = "https://the-internet.herokuapp.com/status_codes/200"
 
