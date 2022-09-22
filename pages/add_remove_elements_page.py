@@ -5,7 +5,7 @@ class AddRemoveElementsPage:
     ADD_ELEMENT_BUTTON = (By.CSS_SELECTOR, '[onclick="addElement()"]')
     DELETE_BUTTON = (By.CLASS_NAME, "added-manually")
     TITLE_PAGE = (By.CSS_SELECTOR, "h3")
-    MIDDLE_PAGE = (By.XPATH, '//*[@id="page-footer"]//a')
+    MIDDLE_PAGE = (By.CSS_SELECTOR, 'a[target="_blank"]')
 
     URL = "https://the-internet.herokuapp.com/add_remove_elements/"
 

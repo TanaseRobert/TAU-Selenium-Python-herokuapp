@@ -30,7 +30,6 @@ def test_link(browser):
     assert "A free, once-weekly e-mail on how to use Selenium like a Pro" == selenium_page.getWelcomeMessage(), "Not the correct message"
     assert browser.current_url == selenium_page.URL, "Wrong link"
 
-
 def test_add_and_delete_functionality(browser):
     add_remove_page = AddRemoveElementsPage(browser)
     add_remove_page.load_page()
