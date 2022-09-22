@@ -35,7 +35,7 @@ def test_button_200_utility(browser):
     assert status_code_page.is200ButtonDisplayed(), "Button 200 not displayed"
     status_code_page.click200Button()
     status_code_200_page = StatusCodes200Page(browser)
-    assert "This page returned a 200 status code." == status_code_200_page.getMessageDisplayed(), "Incorrect message displayed"
+    assert "This page returned a 200 status code. For a definition and common list of HTTP status codes, go here" == status_code_200_page.getMessageDisplayed(), "Incorrect message displayed"
     assert browser.current_url == status_code_200_page.URL, "Wrong Link"
 
 def test_button_301_utility(browser):
@@ -44,7 +44,7 @@ def test_button_301_utility(browser):
     assert status_code_page.is301ButtonDisplayed(), "Button 301 not displayed"
     status_code_page.click301Button()
     status_code_301_page = StatusCodes301Page(browser)
-    assert "This page returned a 301 status code." == status_code_301_page.getMessageDisplayed(), "Incorrect message displayed"
+    assert "This page returned a 301 status code. For a definition and common list of HTTP status codes, go here" == status_code_301_page.getMessageDisplayed(), "Incorrect message displayed"
     assert browser.current_url == status_code_301_page.URL, "Wrong Link"
 
 def test_button_404_utility(browser):
@@ -53,7 +53,7 @@ def test_button_404_utility(browser):
     assert status_code_page.is404ButtonDisplayed(), "Button 404 not displayed"
     status_code_page.click404Button()
     status_code_404_page = StatusCodes404Page(browser)
-    assert "This page returned a 404 status code." == status_code_404_page.getMessageDisplayed(), "Incorrect message displayed"
+    assert "This page returned a 404 status code. For a definition and common list of HTTP status codes, go here" == status_code_404_page.getMessageDisplayed(), "Incorrect message displayed"
     assert browser.current_url == status_code_404_page.URL, "Wrong Link"
 
 def test_button_500_utility(browser):
@@ -62,7 +62,7 @@ def test_button_500_utility(browser):
     assert status_code_page.is500ButtonDisplayed(), "Button 500 not displayed"
     status_code_page.click500Button()
     status_code_500_page = StatusCodes500Page(browser)
-    assert "This page returned a 500 status code." == status_code_500_page.getMessageDisplayed(), "Incorrect message displayed"
+    assert "This page returned a 500 status code. For a definition and common list of HTTP status codes, go here" == status_code_500_page.getMessageDisplayed(), "Incorrect message displayed"
     assert browser.current_url == status_code_500_page.URL, "Wrong Link"
 
 
