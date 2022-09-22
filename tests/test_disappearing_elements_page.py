@@ -8,7 +8,7 @@ from pages.welcome_to_the_internet_page import WelcomeToTheInternetPage
 import time
 from selenium.webdriver.common.by import By
 
-def test_check_site_visibility(browser):
+def test_check_site_utility(browser):
     disappearing_elements_page = DisappearingElementsPage(browser)
     disappearing_elements_page.load_page()
     assert disappearing_elements_page.isElementalDisplayed(), "Button not displayed"

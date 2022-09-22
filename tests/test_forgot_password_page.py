@@ -4,8 +4,7 @@ from selenium.webdriver.common.by import By
 from pages.forgot_password_page import ForgotPasswordPage
 from pages.internal_server_error_page import InternalServerErrorPage
 
-
-def test_check_site_visibility(browser):
+def test_check_site_utility(browser):
     forgot_password_page = ForgotPasswordPage(browser)
     forgot_password_page.load_page()
     assert forgot_password_page.isRetrieveButtonDisplayed(), "Retrieve button not displayed"

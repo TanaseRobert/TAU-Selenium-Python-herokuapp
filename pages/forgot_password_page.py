@@ -6,7 +6,6 @@ class ForgotPasswordPage:
     EMAIL_INPUT = (By.XPATH, '//*[@id="email"]')
     RETRIEVE_BUTTON = (By.CSS_SELECTOR, 'button')
 
-
     URL = "https://the-internet.herokuapp.com/forgot_password"
 
     def __init__(self, browser):
