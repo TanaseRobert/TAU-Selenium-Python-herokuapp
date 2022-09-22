@@ -1,9 +1,7 @@
-import time
 from selenium.webdriver.common.by import By
 
 from pages.add_remove_elements_page import AddRemoveElementsPage
 from pages.selenium_page import SeleniumPage
-
 
 def test_check_add_element_functionality(browser):
     add_remove_page = AddRemoveElementsPage(browser)
