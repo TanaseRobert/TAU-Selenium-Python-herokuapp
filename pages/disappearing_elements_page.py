@@ -12,6 +12,12 @@ class DisappearingElementsPage:
 
     URL = "https://the-internet.herokuapp.com/disappearing_elements"
 
+    def __init__(self, browser):
+        self.browser = browser
+
+    def load_page(self):
+        self.browser.get(self.URL)
+
     def clickHomeButton(self):
         self.browser.find_element(*self.HOME_BUTTON).click()
 

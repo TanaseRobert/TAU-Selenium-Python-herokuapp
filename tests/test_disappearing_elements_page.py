@@ -1,5 +1,7 @@
 from pages.about_page import AboutPage
+from pages.contact_us_page import ContactUs
 from pages.disappearing_elements_page import DisappearingElementsPage
+from pages.portfolio_page import PortfolioPage
 from pages.selenium_page import SeleniumPage
 from pages.welcome_to_the_internet_page import WelcomeToTheInternetPage
 
@@ -36,15 +38,33 @@ def test_home_button(browser):
     assert disappearing_elements_page.isHomeButtonDisplayed(), "Home button doesn't exist"
     disappearing_elements_page.clickHomeButton()
     welcome_to_the_internet_page = WelcomeToTheInternetPage(browser)
-    assert "Welcome to the-internet" == welcome_to_the_internet_page.getHeadingMessage(), "Not the correct message"
+    assert "Welcome to the-internet" == welcome_to_the_internet_page.getHeadingMessage(), "Not the correct heading"
     assert browser.current_url == welcome_to_the_internet_page.URL, "Wrong link"
 
 def test_about_button(browser):
     disappearing_elements_page = DisappearingElementsPage(browser)
     disappearing_elements_page.load_page()
-    assert disappearing_elements_page.isAboutButtonDisplayed(), "Home button doesn't exist"
+    assert disappearing_elements_page.isAboutButtonDisplayed(), "About button doesn't exist"
     disappearing_elements_page.clickAboutButton()
     about_page = AboutPage(browser)
-    assert "Not Found" == about_page.getMessageDisplayed(), "Not the correct error"
+    assert "Not Found" == about_page.getMessageDisplayed(), "Not the correct message"
     assert browser.current_url == about_page.URL, "Wrong link"
+
+def test_contact_us_button(browser):
+    disappearing_elements_page = DisappearingElementsPage(browser)
+    disappearing_elements_page.load_page()
+    assert disappearing_elements_page.isContactUsButtonDisplayed(), "Home button doesn't exist"
+    disappearing_elements_page.clickContactUsButton()
+    contact_us_page = ContactUs(browser)
+    assert "Not Found" == contact_us_page.getNoteDisplayed(), "Not the correct note"
+    assert browser.current_url == contact_us_page.URL, "Wrong link"
+
+def test_portfolio_button(browser):
+    disappearing_elements_page = DisappearingElementsPage(browser)
+    disappearing_elements_page.load_page()
+    assert disappearing_elements_page.isPortfolioButtonDisplayed(), "Home button doesn't exist"
+    disappearing_elements_page.clickPortfolioButton()
+    portfolio_page = PortfolioPage(browser)
+    assert "Not Found" == portfolio_page.getErrorDisplayed(), "Not the correct error"
+    assert browser.current_url == portfolio_page.URL, "Wrong link"
 
