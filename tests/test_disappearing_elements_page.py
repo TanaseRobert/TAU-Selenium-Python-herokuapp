@@ -23,6 +23,11 @@ def test_title(browser):
     disappearing_elements_page.load_page()
     assert "Disappearing Elements" == disappearing_elements_page.getTitlePage(), "Incorrect title page"
 
+def test_heading_message(browser):
+    disappearing_elements_page = DisappearingElementsPage(browser)
+    disappearing_elements_page.load_page()
+    assert "This example demonstrates when elements on a page change by disappearing/reappearing on each page load." == disappearing_elements_page.getHeadingPage(), "Incorrect heading text"
+
 def test_link(browser):
     disappearing_elements_page = DisappearingElementsPage(browser)
     disappearing_elements_page.load_page()

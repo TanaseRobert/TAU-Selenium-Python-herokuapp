@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 class DisappearingElementsPage:
 
     TITLE_PAGE = (By.CSS_SELECTOR, "h3")
+    HEADING_PAGE = (By.CSS_SELECTOR, 'body > div > div > div > p')
     MIDDLE_PAGE = (By.CSS_SELECTOR, 'a[target="_blank"]')
     HOME_BUTTON = (By.CSS_SELECTOR, 'a[href="/"]')
     ABOUT_BUTTON = (By.CSS_SELECTOR, 'a[href="/about/"]')
@@ -44,6 +45,9 @@ class DisappearingElementsPage:
 
     def getTitlePage(self):
         return self.browser.find_element(*self.TITLE_PAGE).text
+
+    def getHeadingPage(self):
+        return self.browser.find_element(*self.HEADING_PAGE).TEXT
 
     def isElementalDisplayed(self):
         return self.browser.find_element(*self.MIDDLE_PAGE).is_displayed()
